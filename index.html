@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+        <script src="js/jquery.js"></script>
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        <style>
+            p{
+                font-size: 25px;
+                text-indent: 2em;
+                line-height: 1.5;
+                text-align: left;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-transition="zoom">
+                    <h1>
+                        聊一聊CSS动画
+                    </h1>
+                </section>
+                <section id="page2" data-transition="convex">
+                    <h3 class="fragment" data-fragment-index="1">何为动画</h3>
+                    <p class="fragment" data-fragment-index="2">
+                        我们眼前所看到图像正在以每秒60次的频率刷新，由于刷新频率很高，因此你感觉不到它在刷新。而动画本质就是要让人眼看到图像被刷新而引起变化的视觉效果，这个变化要以连贯的、平滑的方式进行过渡。 那怎么样才能做到这种效果呢？ 刷新频率为60Hz的屏幕每16.7ms刷新一次，我们在屏幕每次刷新前，将图像的位置向左移动一个像素，即1px。这样一来，屏幕每次刷出来的图像位置都比前一个要差1px，因此你会看到图像在移动；由于我们人眼的视觉停留效应，当前位置的图像停留在大脑的印象还没消失，紧接着图像又被移到了下一个位置，因此你才会看到图像在流畅的移动，这就是视觉效果上形成的动画。
+                    </p>
+                    <style>
+                        #page2  p{
+                           font-size: 25px;
+                            text-indent: 2em;
+                            text-align: left;
+                            line-height: 1.5;
+                        }
+                    </style>
+                </section>
+				<section  data-transition="convex">
+                    <h1>CSS Transitions</h1>
+                </section>
+                <section id="page3" data-transition="concave">
+                    <ul>
+                        <li class="fragment" data-fragment-index="1"  title="规定设置过渡效果的 CSS 属性的名称">transition-property</li>
+                        <li class="fragment" data-fragment-index="2"  title="规定完成过渡效果需要多少秒或毫秒">transition-duration</li>
+                        <li class="fragment" data-fragment-index="3"  title="规定速度效果的速度曲线">transition-timing-function</li>
+                        <li class="fragment" data-fragment-index="4" title="定义过渡效果何时开始">transition-delay</li>
+                    </ul>
+
+                    <style>
+                        #page3 ul{
+                            text-align: left;
+                            width: 100%;
+                            margin:0 auto;
+                        }
+                        #page3 li{
+                            cursor: pointer;
+                        }
+                    </style>
+                </section>
+                <section id="page4" data-transition="concave">
+                    <h3 class="fragment" data-fragment-index="1" >transition-timing-function</h3>
+                    <ul class="fragment" data-fragment-index="2">
+                        <li>
+                            ease:ease函数等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0).</li>
+                        <li>linear:linear 函数等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0).</li>
+                        <li>
+                            ease-in:ease-in 函数等同于贝塞尔曲线(0.42, 0, 1.0, 1.0).
+                        </li>
+                        <li>
+                            ease-out:ease-out 函数等同于贝塞尔曲线(0, 0, 0.58, 1.0).
+                        </li>
+                        <li>
+                            ease-in-out:ease-in-out 函数等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)
+                        </li>
+                        <li>
+                            cubic-bezier:特定的cubic-bezier曲线。 (x1, y1, x2, y2)四个值特定于曲线上点P1和点P2。所有值需在[0, 1]区域内，否则无效。
+                        </li>
+                    </ul>
+                    <style>
+                        #page4 ul{
+                            font-size: 35px;
+                            margin-top: 50px;
+                        }
+                    </style>
+                </section>
+                <section data-transition="concave">
+                    <iframe src="http://cubic-bezier.com/#.72,.19,.59,.38" frameborder="0"></iframe>
+                </section>
+                <section data-transition="convex">
+                    <p>transition: property duration timing-function delay</p>
+                    <iframe src="https://codepen.io/wxw1314/pen/MRJoGa" frameborder="0"></iframe>
+                    <style>
+                        iframe{
+                            width: 100%;
+                            height: 70vh;
+                        }
+                    </style>
+                </section>
+                <section id="page6" data-transition="concave">
+                    <p>transition的优点在于简单易用，但是它有几个很大的局限。</p>
+                    <p>（1）transition需要事件触发，所以没法在网页加载时自动发生。</p>
+                    <p>（2）transition是一次性的，不能重复发生，除非一再触发。</p>
+                    <p>（3）transition只能定义开始状态和结束状态，不能定义中间状态，也就是说只有两个状态。</p>
+                    <p>（4）一条transition规则，只能定义一个属性的变化，不能涉及多个属性。</p>
+                </section>
+                <section data-transition="convex">
+                    <h1>CSS ANIMATIONS</h1>
+                </section>
+                <section id="page7" data-transition="concave">
+                    <ul>
+                        <li class="fragment" data-fragment-index="1"  title="规定需要绑定到选择器的 keyframe 名称">animation-name</li>
+                        <li class="fragment" data-fragment-index="2" title="规定完成动画所花费的时间，以秒或毫秒计">animation-duration</li>
+                        <li class="fragment" data-fragment-index="3" title="规定动画的速度曲线">animation-timing-function</li>
+                        <li class="fragment" data-fragment-index="4" title="规定在动画开始之前的延迟">animation-delay</li>
+                        <li class="fragment" data-fragment-index="5" title="规定动画应该播放的次数(infinite)">animation-iteration-count</li>
+                        <li class="fragment" data-fragment-index="6" title="规定是否应该轮流反向播放动画(normal,alternate)">animation-direction</li>
+                        <li class="fragment" data-fragment-index="7" title="指定动画执行前后如何为目标元素应用样式(none,forwards,backwards,both)">animation-fill-mode</li>
+                    </ul>
+                    <style>
+                        #page7 ul{
+                            text-align: left;
+                            width: 100%;
+                            margin:0 auto;
+                        }
+                        #page7 li{
+                            cursor: pointer;
+                        }
+                    </style>
+                </section>
+                <section data-transition="concave">
+                    <p>animation: name duration timing-function delay iteration-count direction;</p>
+                    <iframe src="https://codepen.io/wxw1314/pen/wZqxPJ" frameborder="0"></iframe>
+                </section>
+                <section>
+                    <h3>some demos</h3></section>
+                <section>
+                    <iframe src="https://codepen.io/akhil_001/full/mzNQoM" frameborder="0"></iframe>
+                </section>
+                <section>
+                    <iframe src="https://codepen.io/SoyEva/full/LRjWzZ" frameborder="0"></iframe>
+                </section>
+                <section data-transition="convex">
+                    <h1>Web Animations</h1>
+                </section>
+                <section id="page9" data-transition="concave">
+                    <!--<p>-->
+                        <!--The Web Animations API opens the browser’s animation engine to developers and manipulation by JavaScript. This API was designed to underlie implementations of both CSS Animations and CSS Transitions, and leaves the door open to future animation effects. It is one of the most performant ways to animate on the Web where supported, letting the browser make its own internal optimizations without hacks, coercion, or Window.requestAnimationFrame().-->
+
+                    <!--</p>-->
+                    <!--<p>With the Web Animations API, we can move interactive animations from stylesheets to JavaScript, separating presentation from behavior. We no longer need to rely on DOM-heavy techniques such as writing CSS properties and scoping classes onto elements to control playback direction. And unlike pure, declarative CSS, JavaScript also lets us dynamically set values from properties to durations. For building custom animation libraries and creating interactive animations, the Web Animations API might be the perfect tool for the job. Let's see what it can do!</p>-->
+                    <p>Web Animations API为开发者打开浏览器的动画引擎，让开发者可以通过JavaScript进行操作。该API旨在成为CSS动画和CSS过渡的实现的基础，并为未来的动画效果留下了空间。它是支持Web的动画最高效的方法之一，让浏览器可以自己进行内部优化而不需要hacks，强制或Window.requestAnimationFrame（）。
+                    </p>
+                    <p>通过Web Animations API，我们可以将交互式动画从样式表移动到JavaScript，将表现与行为分开。我们不再需要依赖DOM-heavy的技术，例如编写CSS属性和将类作用于元素以控制播放方向。与纯粹的声明性CSS不同，JavaScript还允许我们动态地将值从属性设置为持续时间。</p>
+                    <style>
+                        #page9 p{
+                            font-size: 25px;
+                            text-indent: 2em;
+                            line-height: 1.5;
+                            text-align: left;
+                        }
+                    </style>
+
+                </section>
+                <section id="page10" data-transition="convex">
+                    <p>其核心在于提供了:Element.animate(frames, timing);</p>
+                    <p>
+                        有两个参数，第一个参数是关键帧对象数组frames[]，对应CSS3中的@keyframes，每一帧的描述与css3极其类似,但它不需要明确告知动画中每个键出现的百分比。它会根据您给出的键数自动将动画分成相等的部分。也可以直接在对象中指定偏移量，CSS中的百分比偏移更改为offset从0到1的十进制值
+                    </p>
+                    <p>
+                        第二个参数是时间控制timing，包括有duration持续时间、iterations执行次数、direction动画方向、easing缓动函数等属性
+                    </p>
+                    <img src="image/1.png" alt="">
+                    <p>
+                        <!--var options = {-->
+                            <!--iterations: Infinity, // 动画的重复次数，默认是 1-->
+                            <!--iterationStart: 0, // 用于指定动画开始的节点，默认是 0-->
+                            <!--delay: 0, // 动画延迟开始的毫秒数，默认 0-->
+                            <!--endDelay: 0, // 动画结束后延迟的毫秒数，默认 0-->
+                            <!--direction: 'alternate', // 动画的方向 默认是按照一个方向的动画，alternate 则表示交替-->
+                            <!--duration: 700, // 动画持续时间，默认 0-->
+                            <!--fill: 'forwards', // 是否在动画结束时回到元素开始动画前的状态-->
+                            <!--easing: 'ease-out', // 缓动方式，默认 "linear"-->
+                        <!--};-->
+                    </p>
+                    <style>
+                        #page10 p{
+                            text-align: left;
+                            margin-top: 10px;
+                            font-size: 25px;
+                            line-height: 1.5;
+                        }
+                    </style>
+                </section>
+                <section id="page11" data-transition="concave">
+                    <h3>方法和属性：</h3>
+                    <p>pause() – 暂停动画</p>
+                    <p>play() – 播放动画</p>
+                    <p>reverse() – 反向播放</p>
+                    <p>finish() – 立即结束动画</p>
+                    <p>cancel() – 取消动画并回到初始状态</p>
+                    <p>playbackRate – 播放速度（负数的话将导致动画反向运行）</p>
+                    <style>
+                        #page11 p{
+                            text-align: left;
+                            margin-top: 10px;
+                            font-size: 25px;
+                            line-height: 1.5;
+                        }
+                        #page11 h3{
+                            text-align: left;
+                        }
+                    </style>
+                </section>
+                <section id="page12" data-transition="convex">
+                    <h3>Web Animation Api 事件监听：</h3>
+                    <p>onfinish:用于注册完成事件，当调用finish()方法是也可以触发。</p>
+                    <p>oncancel:用于注册取消事件，当调用cancel()方法是也可以触发。</p>
+                    <style>
+                        #page12 p{
+                            text-align: left;
+                            margin-top: 10px;
+                            font-size: 25px;
+                            line-height: 1.5;
+                        }
+                        #page12 h3{
+                            text-align: left;
+                        }
+                    </style>
+                </section>
+                <section data-transition="concave">
+                    <iframe src="https://codepen.io/wxw1314/pen/vMWoJL" frameborder="0"></iframe>
+                </section>
+                <section data-transition="convex">
+                    <h3>web animation vs css animation</h3>
+                </section>
+                <section id="page13" data-transition="concave">
+                    <iframe src="https://codepen.io/wxw1314/pen/OGxMXx" frameborder="0"></iframe>
+                </section>
+                <section id="page14" data-transition="convex">
+                    <p>1,在css animation中animation-timing-function适用于关键帧之间</p>
+                    <p>2,在web animation中animation-timing-function适用于整个动画过程</p>
+                    <p>3,如果想要在web animation中animation-timing-function也适用于关键帧之间，可以在关键帧上加上easing属性（可以不同）</p>
+                    <div class="imgRemark" >
+                        <div class="css-div">
+                            <img src="image/4.jpg" alt="">
+                            <div>css animation</div>
+                        </div>
+                        <div class="web-div">
+                            <img src="image/5.jpg" alt="">
+                            <div>web animation</div>
+                        </div>
+                    </div>
+
+                    <style>
+                        #page14  img{
+                            width: 80%;
+                        }
+                        #page14 .imgRemark{
+                            display: flex;
+                        }
+                        #page14 .imgRemark div{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    </style>
+                </section>
+                <section id="page15" data-transition="concave">
+                    <h3>兼容</h3>
+                    <img src="image/3.jpg" alt="">
+                    <p>备注：可以引进 <a href="https://github.com/web-animations/web-animations-js">polyfill (web-animations-js)</a>,但也只能兼容到ie>=11</p>
+                    <p>移动端浏览器，Android 5.0以上的Android Browser和Chrome for Android本身就已经支持WAAPI了，加上Polyfill之后，iOS的Safari也支持了。</p>
+                </section>
+                <section data-transition="convex">
+                    <h3>Try to animate transform and opacity</h3>
+                </section>
+                <section data-transition="concave">
+                    <p>对于动画的每一帧，浏览器都要重新计算元素的形状位置（reflow），把新状态渲染出来（repaint），再显示到屏幕上</p>
+                    <p>而transform和opacity这两个属性有其特殊性：</p>
+                    <p>1,does not affect the document’s flow,(不影响布局)</p>
+                    <p>2,does not depend on the document’s flow,(不受布局影响)</p>
+                    <p>3,does not cause a repaint.(变化不会导致其它部分需要repaint)</p>
+                    <p>所以浏览器能百分百肯定transform和opacity的变化与布局无关，不受布局影响，其变化也不会影响现有布局，</p>
+                </section>
+                <section data-transition="convex">
+                    <img src="image/2.jpg" alt="">
+                </section>
+                <section data-transition="concave">
+                    <h3>some demos</h3>
+                </section>
+                <section>
+                    <iframe src="https://codepen.io/rachelnabors/full/PNGGaV" frameborder="0"></iframe>
+                </section>
+                <section data-transition="convex">
+                    <video  autoplay="autoplay" loop="loop"  muted="">
+                        <source src="image/taketori-sped-up.mp4" type="video/mp4">
+                    </video>
+                    <p>Brain分享：<a href="https://mozanime.github.io/taketori/">https://mozanime.github.io/taketori/</a></p>
+                </section>
+                <section>
+                    <h3>thanks</h3>
+                </section>
+			</div>
+		</div>
+		<script src="js/reveal.js"></script>
+        <script>
+          $( "ul li" ).mouseenter(function(  ) {
+            let text = $(this).attr('title');
+            let title = $(this).html();
+            $(this).html(text);
+            $(this).attr('title',title);
+          });
+          $( "ul li" ).mouseleave(function(  ) {
+            let text = $(this).attr('title');
+            let title = $(this).html();
+            $(this).html(text);
+            $(this).attr('title',title);
+          });
+        </script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
