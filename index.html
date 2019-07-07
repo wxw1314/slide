@@ -148,139 +148,139 @@
                     <p>animation: name duration timing-function delay iteration-count direction;</p>
                     <iframe src="//codepen.io/wxw1314/pen/wZqxPJ" frameborder="0"></iframe>
                 </section>
-                <!--<section data-transition="convex">-->
-                    <!--<h1>Web Animations</h1>-->
-                <!--</section>-->
-                <!--<section id="page9" data-transition="concave">-->
-                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;The Web Animations API opens the browser’s animation engine to developers and manipulation by JavaScript. This API was designed to underlie implementations of both CSS Animations and CSS Transitions, and leaves the door open to future animation effects. It is one of the most performant ways to animate on the Web where supported, letting the browser make its own internal optimizations without hacks, coercion, or Window.requestAnimationFrame().&ndash;&gt;-->
-
-                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>With the Web Animations API, we can move interactive animations from stylesheets to JavaScript, separating presentation from behavior. We no longer need to rely on DOM-heavy techniques such as writing CSS properties and scoping classes onto elements to control playback direction. And unlike pure, declarative CSS, JavaScript also lets us dynamically set values from properties to durations. For building custom animation libraries and creating interactive animations, the Web Animations API might be the perfect tool for the job. Let's see what it can do!</p>&ndash;&gt;-->
-                    <!--<p>Web Animations API为开发者打开浏览器的动画引擎，让开发者可以通过JavaScript进行操作。该API旨在成为CSS动画和CSS过渡的实现的基础，并为未来的动画效果留下了空间。它是支持Web的动画最高效的方法之一，让浏览器可以自己进行内部优化而不需要hacks，强制或Window.requestAnimationFrame（）。-->
-                    <!--</p>-->
-                    <!--<p>通过Web Animations API，我们可以将交互式动画从样式表移动到JavaScript，将表现与行为分开。我们不再需要依赖DOM-heavy的技术，例如编写CSS属性和将类作用于元素以控制播放方向。与纯粹的声明性CSS不同，JavaScript还允许我们动态地将值从属性设置为持续时间。</p>-->
-                    <!--<style>-->
-                        <!--#page9 p{-->
-                            <!--font-size: 25px;-->
-                            <!--text-indent: 2em;-->
-                            <!--line-height: 1.5;-->
-                            <!--text-align: left;-->
-                        <!--}-->
-                    <!--</style>-->
-
-                <!--</section>-->
-                <!--<section id="page10" data-transition="convex">-->
-                    <!--<p>其核心在于提供了:Element.animate(frames, timing);</p>-->
+                <section data-transition="convex">
+                    <h1>Web Animations</h1>
+                </section>
+                <section id="page9" data-transition="concave">
                     <!--<p>-->
-                        <!--有两个参数，第一个参数是关键帧对象数组frames[]，对应CSS3中的@keyframes，每一帧的描述与css3极其类似,但它不需要明确告知动画中每个键出现的百分比。它会根据您给出的键数自动将动画分成相等的部分。也可以直接在对象中指定偏移量，CSS中的百分比偏移更改为offset从0到1的十进制值-->
-                    <!--</p>-->
-                    <!--<p>-->
-                        <!--第二个参数是时间控制timing，包括有duration持续时间、iterations执行次数、direction动画方向、easing缓动函数等属性-->
-                    <!--</p>-->
-                    <!--<img src="image/1.png" alt="">-->
-                    <!--<p>-->
-                        <!--&lt;!&ndash;var options = {&ndash;&gt;-->
-                            <!--&lt;!&ndash;iterations: Infinity, // 动画的重复次数，默认是 1&ndash;&gt;-->
-                            <!--&lt;!&ndash;iterationStart: 0, // 用于指定动画开始的节点，默认是 0&ndash;&gt;-->
-                            <!--&lt;!&ndash;delay: 0, // 动画延迟开始的毫秒数，默认 0&ndash;&gt;-->
-                            <!--&lt;!&ndash;endDelay: 0, // 动画结束后延迟的毫秒数，默认 0&ndash;&gt;-->
-                            <!--&lt;!&ndash;direction: 'alternate', // 动画的方向 默认是按照一个方向的动画，alternate 则表示交替&ndash;&gt;-->
-                            <!--&lt;!&ndash;duration: 700, // 动画持续时间，默认 0&ndash;&gt;-->
-                            <!--&lt;!&ndash;fill: 'forwards', // 是否在动画结束时回到元素开始动画前的状态&ndash;&gt;-->
-                            <!--&lt;!&ndash;easing: 'ease-out', // 缓动方式，默认 "linear"&ndash;&gt;-->
-                        <!--&lt;!&ndash;};&ndash;&gt;-->
-                    <!--</p>-->
-                    <!--<style>-->
-                        <!--#page10 p{-->
-                            <!--text-align: left;-->
-                            <!--margin-top: 10px;-->
-                            <!--font-size: 25px;-->
-                            <!--line-height: 1.5;-->
-                        <!--}-->
-                    <!--</style>-->
-                <!--</section>-->
-                <!--<section id="page11" data-transition="concave">-->
-                    <!--<h3>方法和属性：</h3>-->
-                    <!--<p>pause() – 暂停动画</p>-->
-                    <!--<p>play() – 播放动画</p>-->
-                    <!--<p>reverse() – 反向播放</p>-->
-                    <!--<p>finish() – 立即结束动画</p>-->
-                    <!--<p>cancel() – 取消动画并回到初始状态</p>-->
-                    <!--<p>playbackRate – 播放速度（负数的话将导致动画反向运行）</p>-->
-                    <!--<style>-->
-                        <!--#page11 p{-->
-                            <!--text-align: left;-->
-                            <!--margin-top: 10px;-->
-                            <!--font-size: 25px;-->
-                            <!--line-height: 1.5;-->
-                        <!--}-->
-                        <!--#page11 h3{-->
-                            <!--text-align: left;-->
-                        <!--}-->
-                    <!--</style>-->
-                <!--</section>-->
-                <!--<section id="page12" data-transition="convex">-->
-                    <!--<h3>Web Animation Api 事件监听：</h3>-->
-                    <!--<p>onfinish:用于注册完成事件，当调用finish()方法是也可以触发。</p>-->
-                    <!--<p>oncancel:用于注册取消事件，当调用cancel()方法是也可以触发。</p>-->
-                    <!--<style>-->
-                        <!--#page12 p{-->
-                            <!--text-align: left;-->
-                            <!--margin-top: 10px;-->
-                            <!--font-size: 25px;-->
-                            <!--line-height: 1.5;-->
-                        <!--}-->
-                        <!--#page12 h3{-->
-                            <!--text-align: left;-->
-                        <!--}-->
-                    <!--</style>-->
-                <!--</section>-->
-                <!--<section data-transition="concave">-->
-                    <!--<iframe src="https://codepen.io/wxw1314/pen/vMWoJL" frameborder="0"></iframe>-->
-                <!--</section>-->
-                <!--<section data-transition="convex">-->
-                    <!--<h3>web animation vs css animation</h3>-->
-                <!--</section>-->
-                <!--<section id="page13" data-transition="concave">-->
-                    <!--<iframe src="https://codepen.io/wxw1314/pen/OGxMXx" frameborder="0"></iframe>-->
-                <!--</section>-->
-                <!--<section id="page14" data-transition="convex">-->
-                    <!--<p>1,在css animation中animation-timing-function适用于关键帧之间</p>-->
-                    <!--<p>2,在web animation中animation-timing-function适用于整个动画过程</p>-->
-                    <!--<p>3,如果想要在web animation中animation-timing-function也适用于关键帧之间，可以在关键帧上加上easing属性（可以不同）</p>-->
-                    <!--<div class="imgRemark" >-->
-                        <!--<div class="css-div">-->
-                            <!--<img src="image/4.jpg" alt="">-->
-                            <!--<div>css animation</div>-->
-                        <!--</div>-->
-                        <!--<div class="web-div">-->
-                            <!--<img src="image/5.jpg" alt="">-->
-                            <!--<div>web animation</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
+                        <!--The Web Animations API opens the browser’s animation engine to developers and manipulation by JavaScript. This API was designed to underlie implementations of both CSS Animations and CSS Transitions, and leaves the door open to future animation effects. It is one of the most performant ways to animate on the Web where supported, letting the browser make its own internal optimizations without hacks, coercion, or Window.requestAnimationFrame().-->
 
-                    <!--<style>-->
-                        <!--#page14  img{-->
-                            <!--width: 80%;-->
-                        <!--}-->
-                        <!--#page14 .imgRemark{-->
-                            <!--display: flex;-->
-                        <!--}-->
-                        <!--#page14 .imgRemark div{-->
-                            <!--display: flex;-->
-                            <!--flex-direction: column;-->
-                            <!--justify-content: center;-->
-                            <!--align-items: center;-->
-                        <!--}-->
-                    <!--</style>-->
-                <!--</section>-->
-                <!--<section id="page15" data-transition="concave">-->
-                    <!--<h3>兼容</h3>-->
-                    <!--<img src="image/3.jpg" alt="">-->
-                    <!--<p>备注：可以引进 <a href="https://github.com/web-animations/web-animations-js">polyfill (web-animations-js)</a>,但也只能兼容到ie>=11</p>-->
-                    <!--<p>移动端浏览器，Android 5.0以上的Android Browser和Chrome for Android本身就已经支持WAAPI了，加上Polyfill之后，iOS的Safari也支持了。</p>-->
-                <!--</section>-->
+                    <!--</p>-->
+                    <!--<p>With the Web Animations API, we can move interactive animations from stylesheets to JavaScript, separating presentation from behavior. We no longer need to rely on DOM-heavy techniques such as writing CSS properties and scoping classes onto elements to control playback direction. And unlike pure, declarative CSS, JavaScript also lets us dynamically set values from properties to durations. For building custom animation libraries and creating interactive animations, the Web Animations API might be the perfect tool for the job. Let's see what it can do!</p>-->
+                    <p>Web Animations API为开发者打开浏览器的动画引擎，让开发者可以通过JavaScript进行操作。该API旨在成为CSS动画和CSS过渡的实现的基础，并为未来的动画效果留下了空间。它是支持Web的动画最高效的方法之一，让浏览器可以自己进行内部优化而不需要hacks，强制或Window.requestAnimationFrame（）。
+                    </p>
+                    <p>通过Web Animations API，我们可以将交互式动画从样式表移动到JavaScript，将表现与行为分开。我们不再需要依赖DOM-heavy的技术，例如编写CSS属性和将类作用于元素以控制播放方向。与纯粹的声明性CSS不同，JavaScript还允许我们动态地将值从属性设置为持续时间。</p>
+                    <style>
+                        #page9 p{
+                            font-size: 25px;
+                            text-indent: 2em;
+                            line-height: 1.5;
+                            text-align: left;
+                        }
+                    </style>
+
+                </section>
+                <section id="page10" data-transition="convex">
+                    <p>其核心在于提供了:Element.animate(frames, timing);</p>
+                    <p>
+                        有两个参数，第一个参数是关键帧对象数组frames[]，对应CSS3中的@keyframes，每一帧的描述与css3极其类似,但它不需要明确告知动画中每个键出现的百分比。它会根据您给出的键数自动将动画分成相等的部分。也可以直接在对象中指定偏移量，CSS中的百分比偏移更改为offset从0到1的十进制值
+                    </p>
+                    <p>
+                        第二个参数是时间控制timing，包括有duration持续时间、iterations执行次数、direction动画方向、easing缓动函数等属性
+                    </p>
+                    <img src="image/1.png" alt="">
+                    <p>
+                        var options = {
+                            iterations: Infinity, // 动画的重复次数，默认是 1
+                            iterationStart: 0, // 用于指定动画开始的节点，默认是 0
+                            delay: 0, // 动画延迟开始的毫秒数，默认 0
+                            endDelay: 0, // 动画结束后延迟的毫秒数，默认 0
+                            direction: 'alternate', // 动画的方向 默认是按照一个方向的动画，alternate 则表示交替
+                            duration: 700, // 动画持续时间，默认 0
+                            fill: 'forwards', // 是否在动画结束时回到元素开始动画前的状态
+                            easing: 'ease-out', // 缓动方式，默认 "linear"
+                        };
+                    </p>
+                    <style>
+                        #page10 p{
+                            text-align: left;
+                            margin-top: 10px;
+                            font-size: 25px;
+                            line-height: 1.5;
+                        }
+                    </style>
+                </section>
+                <section id="page11" data-transition="concave">
+                    <h3>方法和属性：</h3>
+                    <p>pause() – 暂停动画</p>
+                    <p>play() – 播放动画</p>
+                    <p>reverse() – 反向播放</p>
+                    <p>finish() – 立即结束动画</p>
+                    <p>cancel() – 取消动画并回到初始状态</p>
+                    <p>playbackRate – 播放速度（负数的话将导致动画反向运行）</p>
+                    <style>
+                        #page11 p{
+                            text-align: left;
+                            margin-top: 10px;
+                            font-size: 25px;
+                            line-height: 1.5;
+                        }
+                        #page11 h3{
+                            text-align: left;
+                        }
+                    </style>
+                </section>
+                <section id="page12" data-transition="convex">
+                    <h3>Web Animation Api 事件监听：</h3>
+                    <p>onfinish:用于注册完成事件，当调用finish()方法是也可以触发。</p>
+                    <p>oncancel:用于注册取消事件，当调用cancel()方法是也可以触发。</p>
+                    <style>
+                        #page12 p{
+                            text-align: left;
+                            margin-top: 10px;
+                            font-size: 25px;
+                            line-height: 1.5;
+                        }
+                        #page12 h3{
+                            text-align: left;
+                        }
+                    </style>
+                </section>
+                <section data-transition="concave">
+                    <iframe src="https://codepen.io/wxw1314/pen/vMWoJL" frameborder="0"></iframe>
+                </section>
+                <section data-transition="convex">
+                    <h3>web animation vs css animation</h3>
+                </section>
+                <section id="page13" data-transition="concave">
+                    <iframe src="https://codepen.io/wxw1314/pen/OGxMXx" frameborder="0"></iframe>
+                </section>
+                <section id="page14" data-transition="convex">
+                    <p>1,在css animation中animation-timing-function适用于关键帧之间</p>
+                    <p>2,在web animation中animation-timing-function适用于整个动画过程</p>
+                    <p>3,如果想要在web animation中animation-timing-function也适用于关键帧之间，可以在关键帧上加上easing属性（可以不同）</p>
+                    <div class="imgRemark" >
+                        <div class="css-div">
+                            <img src="image/4.jpg" alt="">
+                            <div>css animation</div>
+                        </div>
+                        <div class="web-div">
+                            <img src="image/5.jpg" alt="">
+                            <div>web animation</div>
+                        </div>
+                    </div>
+
+                    <style>
+                        #page14  img{
+                            width: 80%;
+                        }
+                        #page14 .imgRemark{
+                            display: flex;
+                        }
+                        #page14 .imgRemark div{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    </style>
+                </section>
+                <section id="page15" data-transition="concave">
+                    <h3>兼容</h3>
+                    <img src="image/3.jpg" alt="">
+                    <p>备注：可以引进 <a href="https://github.com/web-animations/web-animations-js">polyfill (web-animations-js)</a>,但也只能兼容到ie>=11</p>
+                    <p>移动端浏览器，Android 5.0以上的Android Browser和Chrome for Android本身就已经支持WAAPI了，加上Polyfill之后，iOS的Safari也支持了。</p>
+                </section>
                 <section data-transition="convex">
                     <h3>Try to animate transform and opacity</h3>
                 </section>
@@ -311,18 +311,18 @@
                 <section>
                     <iframe src="//codepen.io/SoyEva/full/LRjWzZ" frameborder="0"></iframe>
                 </section>
-                <!--<section data-transition="concave">-->
-                    <!--<h3>some demos</h3>-->
-                <!--</section>-->
-                <!--<section>-->
-                    <!--<iframe src="https://codepen.io/rachelnabors/full/PNGGaV" frameborder="0"></iframe>-->
-                <!--</section>-->
-                <!--<section data-transition="convex">-->
-                    <!--<video  autoplay="autoplay" loop="loop"  muted="">-->
-                        <!--<source src="image/taketori-sped-up.mp4" type="video/mp4">-->
-                    <!--</video>-->
-                    <!--<p>Brain分享：<a href="https://mozanime.github.io/taketori/">https://mozanime.github.io/taketori/</a></p>-->
-                <!--</section>-->
+                <section data-transition="concave">
+                    <h3>some demos</h3>
+                </section>
+                <section>
+                    <iframe src="https://codepen.io/rachelnabors/full/PNGGaV" frameborder="0"></iframe>
+                </section>
+                <section data-transition="convex">
+                    <video  autoplay="autoplay" loop="loop"  muted="">
+                        <source src="image/taketori-sped-up.mp4" type="video/mp4">
+                    </video>
+                    <p>Brain分享：<a href="https://mozanime.github.io/taketori/">https://mozanime.github.io/taketori/</a></p>
+                </section>
                 <section>
                     <p>思考：如果需要多个动画需要随时的暂停，播放，反向播放，动态改变播放速率，监听到动画的完成和取消，完全用js来为css animation增加样式改变动画会不会显得文件太过“笨重”</p>
                 </section>
