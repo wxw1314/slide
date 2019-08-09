@@ -275,7 +275,7 @@ spinnerAnimation.addEventListener('cancel', function() {
 2，在web animation中animation-timing-function适用于整个动画过程
 
 3，如果想要在web animation中animation-timing-function也适用于关键帧之间，可以在关键帧上加上easing属性（可以不同）
-![](image/2.jpg)
+![](https://user-gold-cdn.xitu.io/2019/8/9/16c758e591aab8c5?w=1170&h=395&f=png&s=54081)
 
 请看[demo](https://codepen.io/wxw1314/pen/OGxMXx)
 
@@ -293,5 +293,5 @@ spinnerAnimation.addEventListener('cancel', function() {
 
 所以浏览器能百分百肯定transform和opacity的变化与布局无关，不受布局影响，其变化也不会影响现有布局
 
-![](https://user-gold-cdn.xitu.io/2019/8/9/16c7592f24f899bc?w=1013&h=799&f=png&s=84398)
+![](image/2.jpg)
 
